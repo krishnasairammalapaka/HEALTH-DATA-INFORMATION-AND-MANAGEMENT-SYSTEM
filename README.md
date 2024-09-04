@@ -1,3 +1,5 @@
+#Health Data Information and Management System
+
 Health Data Information and Management System
 Overview
 The Health Data Information and Management System is a web application designed to manage and analyze health data efficiently and securely. The application leverages Flask for the backend, MongoDB for the database, and Tailwind CSS for a modern and responsive frontend design. This project includes user and admin authentication, theme toggling, and a clean, user-friendly interface.

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facilities</title>
+  <link href="/static/css/styles.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script>
+    function toggleTheme() {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      document.cookie = `theme=${newTheme}; path=/`;
+    }
+
+    function applyTheme() {
+      const cookies = document.cookie.split(';');
+      for (let cookie of cookies) {
+        let [name, value] = cookie.split('=');
+        if (name.trim() === 'theme') {
+          document.documentElement.setAttribute('data-theme', value.trim());
+        }
+      }
+    }
+
+    window.onload = applyTheme;
+  </script>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+  <header class="p-4 bg-gray-800 text-white">
+    <nav class="flex justify-between items-center">
+      <a href="/" class="text-2xl font-bold">Health Data System</a>
+      <div>
+        <button onclick="toggleTheme()" class="px-4 py-2 bg-blue-600 text-white rounded">Toggle Theme</button>
+      </div>
+    </nav>
+  </header>
+  <main class="container mx-auto p-8">
+    <h1 class="text-4xl font-bold mb-6">Facilities We Provide</h1>
+    <ul class="list-disc list-inside">
+      <li class="text-lg mb-4">24/7 Access to Health Data</li>
+      <li class="text-lg mb-4">Comprehensive Data Analysis</li>
+      <li class="text-lg mb-4">Secure Data Storage</li>
+      <li class="text-lg mb-4">User-Friendly Interface</li>
+    </ul>
+  </main>
+</body>
+</html>
